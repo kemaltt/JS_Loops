@@ -117,10 +117,11 @@ let text = `I didn't ask for a completely reasonable excuse! I asked you to get 
 
 const trennen = () => {
     const arr = [];
+    let count = 1
     for (let i = 0; i < text.length; i += 100) {
-        arr.push(text.slice(i, i + 100))
+        arr.push(`${text.slice(i, i+100)} - ${i*count/100} of ${Math.ceil(text.length /100)}`)
     }
-    // console.log(arr);
+    console.log(arr);
 }
 
 trennen()
