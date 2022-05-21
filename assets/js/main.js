@@ -101,10 +101,13 @@ imageArray();
 //     } else {
 
 //         let arr = '';
+//         let arr = [];
 //         for (let i = 1; i < input2.value; i++) {
 //             arr += 'o'
+//             arr.push('o');
 //         }
-//         output2.innerHTML = `<p>L${arr}p</p>`
+//         const newArr = arr.join('');
+//         output2.innerHTML = `<p>L${newArr}p</p>`
 //     }
 
 // }
@@ -121,7 +124,7 @@ const trennen = () => {
     for (let i = 0; i < text.length; i += 100) {
         arr.push(`${text.slice(i, i+100)} - ${i*count/100} of ${Math.ceil(text.length /100)}`)
     }
-    console.log(arr);
+    // console.log(arr);
 }
 
 trennen()
@@ -149,23 +152,30 @@ const loopMe = () => {
         output2.style.color = 'red'
         output2.innerHTML = 'ERROR'
     } else if (input2.value % 2 == 0) {
-        let arr = '';
+        // let arr=''
+        let arr = [];
         for (let i = 0; i < input2.value; i++) {
-            arr += 'o'
+            // arr += 'o'
+            arr.push('o');
         }
+        const newArr = arr.join('');
         output2.style.color = 'green'
-        output2.innerHTML = `<p>L${arr}p</p>`
+        output2.innerHTML = `<p>L${newArr}p</p>`
     } else if (input2.value % 2 == 1) {
-        arr = '';
+        // arr = '';
+        let arr = [];
         for (let i = 0; i < input2.value; i++) {
             if (i % 2 == 0) {
-                arr += 'o'
+                // arr += 'o'
+                arr.push('o');
             } else {
-                arr += '0'
+                // arr += '0'
+                arr.push('0');
             }
         }
+        const newArr = arr.join('');
         output2.style.color = 'green'
-        output2.innerHTML = `<p>L${arr}p</p>`
+        output2.innerHTML = `<p>L${newArr}p</p>`
     }
 
 }
